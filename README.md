@@ -8,71 +8,121 @@ No external libraries are required—Tkinter is included with standard Python.
 
 ---
 
-## ✨ Features
+## 📑 Table of Contents
 
-* 📁 Rename files in one or multiple folders
-* 🔢 Custom numbering with flexible placeholders
-* 🔠 Alphabetic sequences (`a`, `b`, `c`, ... `aa`, `ab`, ...)
-* 🔡 Prefix support (`a1`, `A01`, etc.)
-* 🎯 Place the counter anywhere in the filename
-* 👀 Live preview before renaming
-* 🖱️ Drag & drop to set the exact rename order
-* ⬆️ Move files up/down manually
-* 📅 Sort files by:
-
-  * Name (A–Z / Z–A)
-  * Date Modified
-  * Date Created
-* 📋 Queue multiple folders before renaming
-* 📝 Detailed rename log
-* ⚠️ Built-in validation to prevent invalid filenames
-* 🚫 Collision-safe renaming using temporary filenames
+- [✨ Features](#-features)
+- [🖼️ Screenshot](#-screenshot)
+- [📋 Requirements](#-requirements)
+- [⬇️ Installation](#️-installation)
+- [▶️ Run](#️-run)
+- [📖 How to Use](#-how-to-use)
+- [🔢 Supported Placeholders](#-supported-placeholders)
+- [👀 Live Preview](#-live-preview)
+- [📂 Queue Multiple Folders](#-queue-multiple-folders)
+- [🛡️ Safety Features](#️-safety-features)
+- [💡 Example](#-example)
+- [📁 Project Structure](#-project-structure)
+- [🚀 Future Improvements](#-future-improvements)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👤 Author](#-author)
 
 ---
 
-## Screenshot
+# ✨ Features
 
-<img width="1127" height="898" alt="image" src="https://github.com/user-attachments/assets/4c27ef90-86a1-4a5b-85f1-3bd7c2011327" />
+- 📁 Rename files in one or multiple folders
+- 🔢 Custom numbering with flexible placeholders
+- 🔠 Alphabetic sequences (`a`, `b`, `c`, ..., `aa`, `ab`, ...)
+- 🔡 Prefix support (`a1`, `A01`, etc.)
+- 🎯 Place the counter anywhere in the filename
+- 👀 Live preview before renaming
+- 🖱️ Drag & Drop to arrange file order
+- ⬆️ Move files up or down manually
+- 📅 Sort by:
+  - Name (A–Z / Z–A)
+  - Date Modified
+  - Date Created
+- 📋 Queue multiple folders
+- 📝 Detailed operation log
+- ⚠️ Filename validation
+- 🚫 Collision-safe renaming using temporary filenames
 
+---
 
+# 🖼️ Screenshot
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/4c27ef90-86a1-4a5b-85f1-3bd7c2011327" width="900">
+</p>
+
+---
+
+# 📋 Requirements
+
+- Python **3.8+**
+- Tkinter (comes with Python)
+- Windows / Linux / macOS
+
+Check your Python version:
+
+```bash
+python --version
 ```
-screenshot.png
+
+or
+
+```bash
+py --version
 ```
 
 ---
 
-# Requirements
+# ⬇️ Installation
 
-* Python 3.8 or newer
-* Tkinter (included with standard Python)
-
-No additional packages are required.
-
----
-
-# Installation
-
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/jikokoutei/renamed.git
 ```
 
-Open the project:
+Open the project
 
 ```bash
 cd renamed
 ```
 
+(Optional but Recommended) Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux/macOS
+
+```bash
+source .venv/bin/activate
+```
+
+No additional dependencies are required.
+
 ---
 
-# Run
+# ▶️ Run
 
 ```bash
 python main.py
 ```
 
-Windows users may also run:
+or
 
 ```bash
 py main.py
@@ -80,46 +130,43 @@ py main.py
 
 ---
 
-# How to Use
+# 📖 How to Use
 
 ## Step 1 — Select Folder
 
-* Click **Browse**
-* Choose the folder containing the files
-* Select a quick sorting method
-* Click **Load Files**
+- Click **Browse**
+- Choose the folder containing your files
+- Select a quick sort option
+- Click **Load Files**
 
 ---
 
 ## Step 2 — Arrange File Order
 
-Files appear in a list.
+Drag files into the exact order you want.
 
-You can:
+You can also use:
 
-* Drag files up or down
-* Use **Move Up**
-* Use **Move Down**
+- Move Up
+- Move Down
 
-The first file in the list receives the first number.
+The first file receives the first number.
 
 ---
 
 ## Step 3 — Enter Name Pattern
 
-Type the filename exactly how you want it.
+Place the numbering placeholder inside **{}**
 
-The numbering placeholder must be inside **{}**.
+Example
 
-Examples:
-
-```
+```text
 Photo_{001}
 ```
 
-Produces
+Output
 
-```
+```text
 Photo_001.jpg
 Photo_002.jpg
 Photo_003.jpg
@@ -127,26 +174,26 @@ Photo_003.jpg
 
 ---
 
-```
+```text
 Vacation_{01}_Beach
 ```
 
-Produces
+Output
 
-```
+```text
 Vacation_01_Beach.jpg
 Vacation_02_Beach.jpg
 ```
 
 ---
 
-```
+```text
 IMG-{a1}
 ```
 
-Produces
+Output
 
-```
+```text
 IMG-a1.png
 IMG-a2.png
 IMG-a3.png
@@ -154,58 +201,57 @@ IMG-a3.png
 
 ---
 
-```
+```text
 Document_{A01}
 ```
 
-Produces
+Output
 
-```
+```text
 Document_A01.pdf
 Document_A02.pdf
 ```
 
 ---
 
-```
+```text
 File_{a}
 ```
 
-Produces
+Output
 
-```
+```text
 File_a.txt
 File_b.txt
 File_c.txt
 ...
 File_z.txt
 File_aa.txt
+File_ab.txt
 ```
 
 ---
 
-## Supported Placeholders
+# 🔢 Supported Placeholders
 
-| Placeholder | Output                  |
-| ----------- | ----------------------- |
-| `{1}`       | 1, 2, 3, 4...           |
-| `{01}`      | 01, 02, 03...           |
-| `{001}`     | 001, 002, 003...        |
-| `{a1}`      | a1, a2, a3...           |
-| `{A01}`     | A01, A02, A03...        |
-| `{a}`       | a, b, c... z, aa, ab... |
+| Placeholder | Output |
+|-------------|--------|
+| `{1}` | 1,2,3... |
+| `{01}` | 01,02,03... |
+| `{001}` | 001,002,003... |
+| `{a1}` | a1,a2,a3... |
+| `{A01}` | A01,A02,A03... |
+| `{a}` | a,b,c...z,aa,ab... |
 
 ---
 
-## Live Preview
+# 👀 Live Preview
 
-As you type a pattern, the application shows exactly how the first few filenames will look before anything is renamed.
+The application automatically previews the first few output filenames before any files are renamed.
 
-Example:
+Example
 
-```
-Preview:
-
+```text
 Vacation_001_Beach.jpg
 Vacation_002_Beach.jpg
 Vacation_003_Beach.jpg
@@ -213,42 +259,43 @@ Vacation_003_Beach.jpg
 
 ---
 
-## Queue Multiple Folders
+# 📂 Queue Multiple Folders
 
-You can prepare several folders before renaming.
+You can rename several folders in one operation.
 
-1. Load Folder 1
-2. Set its naming pattern
-3. Click **Add To Queue**
-4. Repeat for additional folders
-5. Click **Rename All Queued Folders**
-
----
-
-## Safety Features
-
-* Detects invalid filename characters
-* Prevents malformed placeholders
-* Warns if numbering is missing
-* Uses temporary filenames to avoid overwrite conflicts
-* Shows confirmation before renaming
-* Displays a detailed operation log
+1. Load Folder
+2. Arrange files
+3. Enter pattern
+4. Click **Add To Queue**
+5. Repeat
+6. Click **Rename All Queued Folders**
 
 ---
 
-# Example
+# 🛡️ Safety Features
 
-Original files
+- Prevents invalid filenames
+- Detects malformed placeholders
+- Warns when numbering is omitted
+- Uses temporary filenames to avoid conflicts
+- Confirmation dialog before renaming
+- Detailed operation log
 
-```
+---
+
+# 💡 Example
+
+Original
+
+```text
 IMG_5342.jpg
 IMG_1234.jpg
 IMG_8910.jpg
 ```
 
-After reordering
+After arranging
 
-```
+```text
 IMG_8910.jpg
 IMG_5342.jpg
 IMG_1234.jpg
@@ -256,13 +303,13 @@ IMG_1234.jpg
 
 Pattern
 
-```
+```text
 Vacation_{001}
 ```
 
-Output
+Result
 
-```
+```text
 Vacation_001.jpg
 Vacation_002.jpg
 Vacation_003.jpg
@@ -270,9 +317,9 @@ Vacation_003.jpg
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
-```
+```text
 renamed/
 │
 ├── main.py
@@ -283,38 +330,39 @@ renamed/
 
 ---
 
-# Future Improvements
+# 🚀 Future Improvements
 
-* Undo rename operation
-* Rename folders
-* Regex rename support
-* Presets
-* Dark mode
-* Metadata-based numbering
-* Multi-language support
+- Undo Rename
+- Folder Renaming
+- Regex Rename
+- Naming Presets
+- Dark Mode
+- Metadata-Based Numbering
+- Multi-language Support
 
 ---
 
-# Contributing
+# 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
 1. Fork the repository
-2. Create a feature branch
 
-```
+2. Create a new branch
+
+```bash
 git checkout -b feature-name
 ```
 
-3. Commit your changes
+3. Commit changes
 
-```
+```bash
 git commit -m "Add feature"
 ```
 
 4. Push
 
-```
+```bash
 git push origin feature-name
 ```
 
@@ -322,14 +370,18 @@ git push origin feature-name
 
 ---
 
-# License
+# 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Author
+# 👤 Author
 
-* GitHub: https://github.com/jikokoutei
+**Khileshwar Sahu**
 
-If you find this project useful, consider giving it a ⭐ on GitHub!
+- GitHub: https://github.com/jikokoutei
+
+If this project helped you, please consider giving it a ⭐ on GitHub!
