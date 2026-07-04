@@ -36,7 +36,7 @@ No external libraries are required—Tkinter is included with standard Python.
 
 
 ```
-images/screenshot.png
+screenshot.png
 ```
 
 ---
@@ -69,13 +69,13 @@ cd renamed
 # Run
 
 ```bash
-python rename_files_gui.py
+python main.py
 ```
 
 Windows users may also run:
 
 ```bash
-py rename_files_gui.py
+py main.py
 ```
 
 ---
@@ -275,11 +275,10 @@ Vacation_003.jpg
 ```
 renamed/
 │
-├── rename_files_gui.py
+├── main.py
 ├── README.md
 ├── LICENSE
-└── images/
-    └── screenshot.png
+└── screenshot.png
 ```
 
 ---
